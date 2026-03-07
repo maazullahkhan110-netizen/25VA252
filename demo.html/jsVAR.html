@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Variable Demo</title>
+    </head>
+    <body>
+        <script>
+            // Declaring a variable using var
+            var message = "Hello, World!";
+            document.write(message); // Output: Hello, World!
+
+            // Reassigning the variable
+            function demo() {
+            message = "Welcome to JavaScript!";
+            document.write("<br>" + message); // Output: Welcome to JavaScript!
+            }
+            demo();
+
+            // Declaring a variable using let
+            let count = 10;
+            document.write("<br>Count: " + count); // Output: Count: 10
+
+            // Reassigning the variable
+            count = 20;
+            document.write("<br>Updated Count: " + count); // Output: Updated Count: 20
+
+            // Declaring a constant variable using const
+            const pi = 3.14;
+            document.write("<br>Value of Pi: " + pi); // Output: Value of Pi: 3.14
+
+            // Attempting to reassign a constant variable will result in an error
+            // pi = 3.14159; // Uncommenting this line will cause an error
+        </script>
+</html>
