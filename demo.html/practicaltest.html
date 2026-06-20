@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum of N numbers</title>
+    <style>
+        body{
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .box{
+            border: 1px solid black;
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+        }
+        input{
+            padding: 5px;
+            margin: 10px;
+        }
+        button{
+            padding: 5px;
+            margin: 10px;
+        }
+        p{
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+
+    </style>
+</head>
+   <div class="box">
+        <h2>sum of N numbers</h2>
+        <input type="number" id="number input" placeholder="enter a number">
+        <button onclick="findsum()">calculate</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function findsum(){
+            var num = document.getElementById("number input").value;
+            var sum = 0;
+            if(num==""||num<0)
+        {
+            document.getElementById("result").innerHTML ="please enter a va;lid number";
+            return;
+        }
+            for(var i=1; i<=num; i++){
+                sum = sum + i;
+            }
+            document.getElementById("result").innerHTML = "the sum of first " + num + " numbers is: " + sum;    
+        }
+    </script>
+</body>
+
+</body>
+</html>

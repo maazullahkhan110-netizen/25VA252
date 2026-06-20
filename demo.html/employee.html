@@ -21,14 +21,13 @@
         }
 
         .container{
-            width:95%;
-            max-width:1000px;
+            width:90%;
+            max-width:800px;
             margin:30px auto;
             background:white;
             padding:25px;
             border-radius:10px;
             box-shadow:0 4px 8px rgba(0,0,0,0.1);
-            text-align:center;
         }
 
         input{
@@ -55,18 +54,10 @@
             background:#218838;
         }
 
-        .tables{
-            display:flex;
-            flex-wrap:wrap;
-            justify-content:space-between;
-            margin-top:30px;
-        }
-
         table{
-            width:32%;
+            width:100%;
             border-collapse:collapse;
             margin-top:20px;
-            background:#fff;
         }
 
         th, td{
@@ -84,22 +75,10 @@
             background:#ffc107;
         }
 
-        .other-employees th{
-            background:#dc3545;
-        }
-
         h3{
-            margin-top:0;
+            margin-top:30px;
             color:#333;
         }
-
-        @media(max-width:900px){
-            table{
-                width:100%;
-                margin-bottom:20px;
-            }
-        }
-
     </style>
 </head>
 <body>
@@ -115,40 +94,23 @@
     <input type="number" id="salary" placeholder="Salary"><br>
     <button onclick="addEmployee()">Add Employee</button>
 
-    <div class="tables">
-        <div>
-            <h3>All Employees</h3>
-            <table id="allEmployees">
-                <tr>
-                    <th>Name</th>
-                    <th>Branch</th>
-                    <th>Salary</th>
-                </tr>
-            </table>
-        </div>
+    <h3>All Employees</h3>
+    <table id="allEmployees">
+        <tr>
+            <th>Name</th>
+            <th>Branch</th>
+            <th>Salary</th>
+        </tr>
+    </table>
 
-        <div>
-            <h3>High Salary Employees (>50k)</h3>
-            <table id="highSalary" class="high-salary">
-                <tr>
-                    <th>Name</th>
-                    <th>Branch</th>
-                    <th>Salary</th>
-                </tr>
-            </table>
-        </div>
-
-        <div>
-            <h3>Other Employees (≤50k)</h3>
-            <table id="otherEmployees" class="other-employees">
-                <tr>
-                    <th>Name</th>
-                    <th>Branch</th>
-                    <th>Salary</th>
-                </tr>
-            </table>
-        </div>
-    </div>
+    <h3>High Salary Employees (Salary > 50,000)</h3>
+    <table id="highSalary" class="high-salary">
+        <tr>
+            <th>Name</th>
+            <th>Branch</th>
+            <th>Salary</th>
+        </tr>
+    </table>
 </div>
 
 <script>
@@ -169,19 +131,13 @@ function addEmployee(){
     newRow.insertCell(1).innerText = branch;
     newRow.insertCell(2).innerText = "₹" + salary.toLocaleString();
 
-    // Add to High Salary or Other Employees
+    // Add to High Salary Table if salary > 50k
     if(salary > 50000){
         let highTable = document.getElementById("highSalary");
         let highRow = highTable.insertRow();
         highRow.insertCell(0).innerText = name;
         highRow.insertCell(1).innerText = branch;
         highRow.insertCell(2).innerText = "₹" + salary.toLocaleString();
-    } else {
-        let otherTable = document.getElementById("otherEmployees");
-        let otherRow = otherTable.insertRow();
-        otherRow.insertCell(0).innerText = name;
-        otherRow.insertCell(1).innerText = branch;
-        otherRow.insertCell(2).innerText = "₹" + salary.toLocaleString();
     }
 
     // Clear input fields

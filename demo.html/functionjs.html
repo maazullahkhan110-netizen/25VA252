@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Function in JS</title>
+    </head>
+    <body>
+        <script>
+            // normal function without para
+
+            function demo(){
+                console.log("hello js");
+            }
+            demo();
+            //normal fun with para
+            function demo1(text){
+                console.log("Hello"+ text   );
+
+            }
+            demo1("react");
+            demo();
+
+            //func with default para
+            function add(a,b=10){
+                console.log("addition of two numbers is"+(a+b))
+            }
+            add(3);
+
+            // an anonymous fn is javascript is a fn that does not have identifier
+            let cal=function(){
+                var num1=5;
+                var num2=7;
+                var res=num*num2;
+                console.log("multiply of num1 and num"+res);
+            }
+            cal();
+            //arrow fn with multiline statement
+            let div=(x,y)=>{
+                var num1=x;
+                var num2=y;
+                var res=x/y;
+                console.log("Division is"+ res);
+                        }
+                        div(12,3);
+
+            
+        </script>
+    </body>
+</html>

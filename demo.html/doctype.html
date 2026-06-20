@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        #text{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Enter your name" id="inputData"/>
+    <h2 id="text"></h2>
+    <button onclick="result()">Click on me!</button>
+    <p id="para">
+        The Document Object Model (DOM) is a programming interface for web documents that allows JavaScript to dynamically access, modify, and control the content, structure, and style of a webpage. It represents the entire page as a hierarchical tree of objects, where each part of the document (elements, attributes, text) is a node.
+    </p>
+    <script src="dom.js"></script>
+</body>
+</html>
+function result(){
+let inputValue=document.getElementById('inputData').value;
+
+let displayHeading=document.getElementById('text');
+
+displayHeading.innerHTML=inputValue;
+
+displayHeading.style.color="red"
+
+// change color of body element
+
+document.getElementsByTagName('body')[0].style.backgroundColor=
+
+"green";
+}
+
+// addEventListener method
+
+let paraBkg=document.getElementById('para');
+
+function colorChange(){
+    paraBkg.style.backgroundColor=
+                  "#"+(Math.random() * 0xFFFFFF << 0).toString(16);
+}
+paraBkg.addEventListener('mouseout',colorChange);
